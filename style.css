@@ -1,10 +1,12 @@
 :root {
   --bg: #0d1117;
+  --card-bg: #161b22;
+  --card-hover: #1c2128;
   --text: #e6edf3;
   --muted: #8b949e;
   --tag-bg: #21262d;
   --border: #30363d;
-  --max-width: 680px;
+  --max-width: 720px;
 }
 
 * { box-sizing: border-box; }
@@ -142,34 +144,48 @@ p.page-bio {
   color: #c9d1d9;
   font-size: 15px;
   margin: 0 0 40px;
+  max-width: 60ch;
 }
 
 .section {
-  margin-bottom: 40px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 28px 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .section h2 {
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--muted);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
-  margin: 0 0 20px;
+  margin: 0 0 4px;
 }
 
 .entry {
-  margin-bottom: 20px;
+  padding: 20px 12px;
+  margin: 0 -12px;
+  border-top: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background 0.15s ease;
 }
 
-.entry:last-child {
-  margin-bottom: 0;
+.section h2 + .entry {
+  border-top: none;
+  padding-top: 16px;
+}
+
+.entry:hover {
+  background: var(--card-hover);
 }
 
 .entry .entry-title {
   font-size: 16px;
   font-weight: 600;
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
 
 .entry .entry-title a {
