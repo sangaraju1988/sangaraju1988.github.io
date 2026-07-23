@@ -12,8 +12,7 @@ Static HTML/CSS. No framework, no build step.
 
 ```
 index.html       Writing index
+portfolio.html   Speaking, judging/reviewing, and articles
 posts/           Individual post pages
 style.css        Shared styling
 ```
-
-Portfolio (nav link) points to the GitHub profile README at github.com/sangaraju1988.
