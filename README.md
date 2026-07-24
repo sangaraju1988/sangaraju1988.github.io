@@ -11,8 +11,9 @@ Static HTML/CSS. No framework, no build step.
 ## Structure
 
 ```
-index.html       Writing index
-portfolio.html   Speaking, judging/reviewing, and articles
+index.html       Home — speaking, judging/mentoring, and articles
+writing.html     Writing index
+portfolio.html   Redirects to index.html (old link kept alive)
 posts/           Individual post pages
 style.css        Shared styling
 ```

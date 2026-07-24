@@ -1,11 +1,16 @@
 :root {
-  --bg: #0d1117;
-  --card-bg: #161b22;
-  --card-hover: #1c2128;
-  --text: #e6edf3;
-  --muted: #8b949e;
+  --page-bg: #f6f8fa;
+  --page-text: #1f2328;
+  --page-muted: #57606a;
+  --page-border: #d0d7de;
+
+  --card-bg: #0d1117;
+  --card-hover: #161b22;
+  --card-text: #e6edf3;
+  --card-muted: #8b949e;
+  --card-border: #30363d;
   --tag-bg: #21262d;
-  --border: #30363d;
+
   --max-width: 720px;
 }
 
@@ -13,8 +18,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--page-bg);
+  color: var(--page-text);
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 48px 20px 80px;
@@ -32,50 +37,62 @@ header.site-header .name {
 }
 
 header.site-header .name a {
-  color: var(--text);
+  color: var(--page-text);
   text-decoration: none;
 }
 
 nav.site-nav a {
-  color: var(--muted);
+  color: var(--page-muted);
   text-decoration: none;
   margin-right: 16px;
   font-size: 14px;
 }
 
 nav.site-nav a:hover {
-  color: var(--text);
+  color: var(--page-text);
   text-decoration: underline;
 }
 
 h1.page-title {
   font-size: 26px;
   margin: 32px 0 4px;
+  color: var(--page-text);
 }
 
-p.page-subtitle {
-  color: var(--muted);
+p.page-subtitle,
+p.page-bio {
+  color: var(--page-muted);
   font-size: 15px;
   margin: 0 0 40px;
+  max-width: 60ch;
 }
+
+/* ---- Cards: used for both blog post previews (Writing) and
+   portfolio sections (Home) — dark tiles on the light page ---- */
 
 .post {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.post:last-child {
-  border-bottom: none;
+.post:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
 }
 
 .tags {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .tags span {
   display: inline-block;
   background: var(--tag-bg);
-  color: var(--muted);
+  color: var(--card-muted);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -91,7 +108,7 @@ p.page-subtitle {
 }
 
 .post h3 a {
-  color: var(--text);
+  color: var(--card-text);
   text-decoration: none;
 }
 
@@ -106,18 +123,19 @@ p.page-subtitle {
 }
 
 .post .meta {
-  color: var(--muted);
+  color: var(--card-muted);
   font-size: 13px;
 }
 
-/* Single post page */
+/* Single post reading page — plain, light, optimized for reading */
 article.post-full h1 {
   font-size: 28px;
   margin-bottom: 8px;
+  color: var(--page-text);
 }
 
 article.post-full .meta {
-  color: var(--muted);
+  color: var(--page-muted);
   font-size: 13px;
   margin-bottom: 32px;
 }
@@ -125,13 +143,14 @@ article.post-full .meta {
 article.post-full p {
   font-size: 16px;
   margin-bottom: 20px;
+  color: var(--page-text);
 }
 
 a.back-link {
   display: inline-block;
   margin-top: 32px;
   font-size: 14px;
-  color: var(--muted);
+  color: var(--page-muted);
   text-decoration: none;
 }
 
@@ -139,21 +158,14 @@ a.back-link:hover {
   text-decoration: underline;
 }
 
-/* Portfolio page */
-p.page-bio {
-  color: #c9d1d9;
-  font-size: 15px;
-  margin: 0 0 40px;
-  max-width: 60ch;
-}
-
+/* Home / portfolio sections */
 .section {
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 28px 28px 8px;
   margin-bottom: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .section h2 {
@@ -161,14 +173,14 @@ p.page-bio {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--muted);
+  color: var(--card-muted);
   margin: 0 0 4px;
 }
 
 .entry {
   padding: 20px 12px;
   margin: 0 -12px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--card-border);
   border-radius: 8px;
   transition: background 0.15s ease;
 }
@@ -186,10 +198,11 @@ p.page-bio {
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 6px;
+  color: var(--card-text);
 }
 
 .entry .entry-title a {
-  color: var(--text);
+  color: var(--card-text);
   text-decoration: none;
 }
 
@@ -198,14 +211,14 @@ p.page-bio {
 }
 
 .entry .entry-meta {
-  color: var(--muted);
+  color: var(--card-muted);
   font-size: 13px;
 }
 
 .entry .entry-meta a {
-  color: var(--muted);
+  color: var(--card-muted);
 }
 
 .entry .entry-meta a:hover {
-  color: var(--text);
+  color: var(--card-text);
 }
