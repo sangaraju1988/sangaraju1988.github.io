@@ -67,6 +67,84 @@ p.page-bio {
   max-width: 60ch;
 }
 
+/* Hero (Home page only): photo + name + tagline + bio + CTA buttons */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 8px;
+}
+
+.hero .avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text .page-title {
+  margin: 0 0 4px;
+}
+
+.hero-tagline {
+  color: var(--page-muted);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 14px;
+}
+
+.hero-text .page-bio {
+  margin: 0 0 20px;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 32px;
+}
+
+.hero-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--page-border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--page-text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.hero-links a:hover {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-color: var(--card-bg);
+}
+
+@media (max-width: 520px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-links {
+    justify-content: center;
+  }
+}
+
 /* ---- Cards: used for both blog post previews (Writing) and
    portfolio sections (Home) — dark tiles on the light page ---- */
 
